@@ -3,7 +3,7 @@ use Mix.Config
 # Configure your database
 config :doodlemob, Doodlemob.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "root",
   database: "doodlemob_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
