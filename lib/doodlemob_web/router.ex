@@ -11,11 +11,19 @@ defmodule DoodlemobWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+   # post "/api/doodles", DoodleController, :create
+
+  end
+
+  scope "/api", DoodlemobWeb do
+    pipe_through(:api)
+
+    resources "/doodles", DoodleController
   end
 
   scope "/", DoodlemobWeb do
     pipe_through :browser
-
+    get "/doodles", DoodleController, :dashboard
     get "/", PageController, :index
   end
 
